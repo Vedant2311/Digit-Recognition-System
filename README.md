@@ -6,7 +6,13 @@ Here, all the different functions for the Convolutional Neural Networks have bee
 
 The name of our file to be executed is: **main.cpp**. There are other files in the zip which also contain the corresponding files: **others.cpp**, **sourceMKL.cpp**, **sourcePT.cpp**, and **sourceOB.cpp**. I have also included their header files as well. There is a make file which compiles all the programs by the command **make** in the command prompt. The program is to be executed by the command: **. /library** in the command prompt
 
-I have added all the files containing the main calling function, the required functions, the make file, the readme file, the text files containing the values of the time taken for the different operations obtained by us, the plots, a image.txt file of 512 * 512 size for running the program (You can add your own text file in the project folder to test it. There is no constraint on the name of the file taken as the input), GNU plot scripts, and the plots obtained by us for comparing the different modes of matrix multiplication.
+I have added all the files containing the main calling function, the required functions, the make file, the readme file, the text files containing the values of the time taken for the different operations obtained by us, the plots, a image.txt file of 512 * 512 size for running the program (You can add your own text file in the project folder to test it. There is no constraint on the name of the file taken as the input), GNU plot scripts, and the plots obtained by us for comparing the different modes of matrix multiplication. 
+
+In case, you are not familiar with the terms like **Intel MKL**, **openBLAS**, **pthreads**: Do refer the following links to get an idea about them
+
+ * https://software.intel.com/en-us/mkl
+ * https://www.openblas.net/
+ * https://www.cs.cmu.edu/afs/cs/academic/class/15492-f07/www/pthreads.html
 
 The different functions and their descriptions are given as follow (Be sure that valid existing files are given as inputs):
 
