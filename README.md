@@ -64,10 +64,17 @@ The different functions and their descriptions are given as follow (Be sure that
     *	Implementing Tanh function for the given matrix.
   *	All the other input formats are invalid and will show an error.
    
+Then the comparisons were carried out between these implemented boosts by making box plots using **gnuplot**. The comparisions for the sizes of 32 * 32, 64 * 64, and 128 * 128 are given here by the file names as **matrix-32,3.png**, **matrix-64,3.png**, and **matrix-128,3.png** respectively.
+   
 Explanation for the nature of graphs:
+
   *	I plotted the graphs of MKL, OB and Pthread for the input matrix sizes of 32,64, 128.
   *	I kept the size of kernel to be fixed as 4.
   *	I measured the time for the overall operation, and not just the multiplication times for the asked comparison.
   *	Rather than running the operation once for random matrices, we did the test by running the operation multiple times on the same inputs since each time the program is run, it will take a different amount of time taken which are not different by the orders of magnitude which will also be expected by running the operation on different matrices randomly generated for a single time, if we are not taking the range of the allowed values of the matrices to be too huge and it’s certainly not a good choice since the time taken would differ too much and wouldn’t help in proper comparison.
   *	Now since we measured the time of all the operations, we expected only a slight variation in the running times of the functions
   *	I observed that the behaviours of MKL and OB were nearly similar while pthread differed more from them and also it turned out to be less efficient as such in all the cases considered.
+  
+## LeNet
+
+
