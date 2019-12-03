@@ -1,0 +1,22 @@
+0.011414  MKL  
+0.009787  MKL
+0.005946  MKL  
+0.007512  MKL
+0.005761  MKL
+0.005666  MKL
+
+0.010828  Openblas
+0.009126  Openblas
+0.00646   Openblas
+0.006928  Openblas
+0.005518  Openblas
+0.005681  Openblas
+
+0.012193  Pthread
+0.005946  Pthread
+0.007593  Pthread
+0.008724  Pthread
+0.006013  Pthread
+0.008905  Pthread
+
+

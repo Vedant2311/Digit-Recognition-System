@@ -1,0 +1,27 @@
+2.26161   MKL 
+2.26566   MKL
+2.25675   MKL
+2.30824   MKL
+2.23255   MKL
+2.24596   MKL
+
+2.22101
+  Openblas
+2.23779  Openblas
+2.19052  Openblas
+2.26935  Openblas
+2.22098  Openblas
+2.25289  Openblas
+2.19989  Openblas
+2.22066  Openblas
+2.21914  Openblas
+
+2.56746    Pthread
+2.08377	   Pthread
+2.98117    Pthread
+2.37545    Pthread
+2.07567    Pthread
+2.58379    Pthread
+2.44432    Pthread
+2.96443    Pthread
+2.37461    Pthread 

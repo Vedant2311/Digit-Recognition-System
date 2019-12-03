@@ -1,0 +1,4 @@
+set style fill solid 0.25 border -1
+set style boxplot outliers pointtype 7
+set style data boxplot
+plot "matrix-128,3.txt" using (1):1:(0.5):2
