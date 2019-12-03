@@ -80,22 +80,22 @@ Explanation for the nature of graphs:
 All the function implementations considered till now were combined and constructued into the entire LeNet. This was done in the form of six layers:
 
  * Layer 1: 
-  * convolution => input_size = 28, kernel_size = 5, number_of_kernel = 20
-  * Output in 24 * 24 * 20 matrix 
+    * convolution => input_size = 28, kernel_size = 5, number_of_kernel = 20
+    * Output in 24 * 24 * 20 matrix 
  * Layer 2: 
-  * Pooling => no_of_channels = 20, size = 24
-  * Output in 12 * 12 * 20 matrix
+    * Pooling => no_of_channels = 20, size = 24
+    * Output in 12 * 12 * 20 matrix
  * Layer 3: 
-  * convolution & relu => no_of_kernels = 50, input_channels = 20, input_size = 12, kernel_size = 5
-  * Output in 8 * 8 * 50 matrix
+    * convolution & relu => no_of_kernels = 50, input_channels = 20, input_size = 12, kernel_size = 5
+    * Output in 8 * 8 * 50 matrix
  * Layer 4: 
-  * Pooling => no_of_channels = 50, size = 8
-  * Output in 4 * 4 * 50 matrix
+    * Pooling => no_of_channels = 50, size = 8
+    * Output in 4 * 4 * 50 matrix
  * Layer 5: 
-  * convolution & relu => no_of_kernels = 500, input_channels =50, input_size = 4, kernel_size = 4
-  * Output in 1 * 1 * 500 matrix
+    * convolution & relu => no_of_kernels = 500, input_channels =50, input_size = 4, kernel_size = 4
+    * Output in 1 * 1 * 500 matrix
  * Layer 6: 
-  * convolution & relu => no_of_kernels = 10, input_channels = 500, input_size = 1, kernel_size = 1
-  * Output in 1 * 1 * 10 matrix => The final Probabilities
+    * convolution & relu => no_of_kernels = 10, input_channels = 500, input_size = 1, kernel_size = 1
+    * Output in 1 * 1 * 10 matrix => The final Probabilities
   
 The learned parameters for the different cases are given in the text files. Also, two sample folders for the digits "1" and "2" are given, which can be run and tested.
