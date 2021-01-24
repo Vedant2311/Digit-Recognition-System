@@ -15,19 +15,24 @@ In case, you are not familiar with the terms like **Intel MKL**, **openBLAS**, *
  * https://www.cs.cmu.edu/afs/cs/academic/class/15492-f07/www/pthreads.html
 
 The different functions and their descriptions are given as follow (Be sure that valid existing files are given as inputs):
-
-  *	convoWithoutPadding-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2
+```
+1. Basic Serial Convolution functions
+  *	convoWithoutPadding matrix1.txt dim_matrix1 matrix2.txt dim_matrix2
     *	Here, dim_matrix1 and dim_matrix2 should be valid integers, else an error will be thrown (For eg. If dim_matrix1 * dim_matrix1 is NOT equal to the total number of floats in matrix1.txt, then an error is thrown.)
     *	It implements the Convolution of the two given square matrices, without using the matrix multiplication. Here, no padding is added.
     *	Here, matrix1 is the Input and matrix2 is the kernel, thus error if dim_matrix2 >= dim_matrix1
+    
   *	convoWithPadding-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2-padding
     *	Here, dim_matrix1 and dim_matrix2 should be valid integers, else an error will be thrown (For eg. If dim_matrix1 * dim_matrix1 is NOT equal to the total number of floats in matrix1.txt, then an error is thrown.)
     *	It implements the Convolution of the two given square matrices, without using the matrix multiplication. Here, no padding is added.
     *	Here, matrix1 is the Input and matrix2 is the kernel, thus error if dim_matrix2 >= dim_matrix1
+    
   *	convoWithPadding-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2-padding
     *	Here, dim_matrix1 and dim_matrix2 should be valid integers, else an error will be thrown (For eg. If dim_matrix1 * dim_matrix1 is NOT equal to the total number of floats in matrix1.txt, then an error is thrown.)
     *	It implements the Convolution of the two given square matrices, without using the matrix multiplication. The program calculated the padding value and returned an error if the size of the kernel is even, since in that case, the size of the output can never be equal to the size of the input, in the previous assignment submission. But in order to make the program more flexible, we decided to take the padding value as an input so that we don’t restrict the output to be the same size as the input.
     *	Here, matrix1 is the Input and matrix2 is the kernel, thus error if dim_matrix2 >= dim_matrix1
+ 
+2. Serial Convulution functions implemented as  
   *	multWithoutPadding-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2
     *	Works same as the convoWithoutPadding function, the only difference here being the matrix multiplication implemented here.
   *	multWithPadding-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2-padding
@@ -63,7 +68,7 @@ The different functions and their descriptions are given as follow (Be sure that
     *	dim_matrix1 should be a valid integer.
     *	Implementing Tanh function for the given matrix.
   *	All the other input formats are invalid and will show an error.
-   
+```
 Then the comparisons were carried out between these implemented boosts by making box plots using **gnuplot**. The comparisions for the sizes of 32 * 32, 64 * 64, and 128 * 128 are given here by the file names as **matrix-32,3.png**, **matrix-64,3.png**, and **matrix-128,3.png** respectively.
    
 Explanation for the nature of graphs:
