@@ -18,7 +18,7 @@ The different functions and their descriptions are given as follow (Be sure that
 ```
 1. Basic Serial Convolution functions
    a) convoWithoutPadding matrix1.txt dim_matrix1 matrix2.txt dim_matrix2
-       *	Here, dim_matrix1 and dim_matrix2 should be valid integers, else an error will be thrown (For eg. If dim_matrix1 * dim_matrix1 is NOT equal to the total number of floats in matrix1.txt, then an error is thrown.)
+      *	Here, dim_matrix1 and dim_matrix2 should be valid integers, else an error will be thrown (For eg. If dim_matrix1 * dim_matrix1 is NOT equal to the total number of floats in matrix1.txt, then an error is thrown.)
        *	It implements the Convolution of the two given square matrices, without using the matrix multiplication. Here, no padding is added.
        *	Here, matrix1 is the Input and matrix2 is the kernel, thus error if dim_matrix2 >= dim_matrix1
 
