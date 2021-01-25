@@ -17,58 +17,73 @@ In case, you are not familiar with the terms like **Intel MKL**, **openBLAS**, *
 The different functions and their descriptions are given as follow (Be sure that valid existing files are given as inputs):
 ```
 1. Basic Serial Convolution functions
+   a) convoWithoutPadding matrix1.txt dim_matrix1 matrix2.txt dim_matrix2
+       *	Here, dim_matrix1 and dim_matrix2 should be valid integers, else an error will be thrown (For eg. If dim_matrix1 * dim_matrix1 is NOT equal to the total number of floats in matrix1.txt, then an error is thrown.)
+       *	It implements the Convolution of the two given square matrices, without using the matrix multiplication. Here, no padding is added.
+       *	Here, matrix1 is the Input and matrix2 is the kernel, thus error if dim_matrix2 >= dim_matrix1
 
-   convoWithoutPadding matrix1.txt dim_matrix1 matrix2.txt dim_matrix2
-    *	Here, dim_matrix1 and dim_matrix2 should be valid integers, else an error will be thrown (For eg. If dim_matrix1 * dim_matrix1 is NOT equal to the total number of floats in matrix1.txt, then an error is thrown.)
-    *	It implements the Convolution of the two given square matrices, without using the matrix multiplication. Here, no padding is added.
-    *	Here, matrix1 is the Input and matrix2 is the kernel, thus error if dim_matrix2 >= dim_matrix1
-    
-convoWithPadding-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2-padding
-    *	Here, dim_matrix1 and dim_matrix2 should be valid integers, else an error will be thrown (For eg. If dim_matrix1 * dim_matrix1 is NOT equal to the total number of floats in matrix1.txt, then an error is thrown.)
-    *	It implements the Convolution of the two given square matrices, without using the matrix multiplication. Here, no padding is added.
-    *	Here, matrix1 is the Input and matrix2 is the kernel, thus error if dim_matrix2 >= dim_matrix1
-    
-  *	convoWithPadding-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2-padding
-    *	Here, dim_matrix1 and dim_matrix2 should be valid integers, else an error will be thrown (For eg. If dim_matrix1 * dim_matrix1 is NOT equal to the total number of floats in matrix1.txt, then an error is thrown.)
-    *	It implements the Convolution of the two given square matrices, without using the matrix multiplication. The program calculated the padding value and returned an error if the size of the kernel is even, since in that case, the size of the output can never be equal to the size of the input, in the previous assignment submission. But in order to make the program more flexible, we decided to take the padding value as an input so that we don’t restrict the output to be the same size as the input.
-    *	Here, matrix1 is the Input and matrix2 is the kernel, thus error if dim_matrix2 >= dim_matrix1
+   b) convoWithPadding-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2-padding
+       *	Here, dim_matrix1 and dim_matrix2 should be valid integers, else an error will be thrown (For eg. If dim_matrix1 * dim_matrix1 is NOT equal to the total number of floats in matrix1.txt, then an error is thrown.)
+       *	It implements the Convolution of the two given square matrices, without using the matrix multiplication. Here, no padding is added.
+       *	Here, matrix1 is the Input and matrix2 is the kernel, thus error if dim_matrix2 >= dim_matrix1
+
+   c) convoWithPadding-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2-padding
+       *	Here, dim_matrix1 and dim_matrix2 should be valid integers, else an error will be thrown (For eg. If dim_matrix1 * dim_matrix1 is NOT equal to the total number of floats in matrix1.txt, then an error is thrown.)
+       *	It implements the Convolution of the two given square matrices, without using the matrix multiplication. The program calculated the padding value and returned an error if the size of the kernel is even, since in that case, the size of the output can never be equal to the size of the input, in the previous assignment submission. But in order to make the program more flexible, we decided to take the padding value as an input so that we don’t restrict the output to be the same size as the input.
+       *	Here, matrix1 is the Input and matrix2 is the kernel, thus error if dim_matrix2 >= dim_matrix1
  
-2. Serial Convulution functions implemented as  
-  *	multWithoutPadding-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2
-    *	Works same as the convoWithoutPadding function, the only difference here being the matrix multiplication implemented here.
-  *	multWithPadding-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2-padding
-    *	Works same as the convoWithPadding function, the only difference here being the matrix multiplication implemented here.
-  *	multWithoutPadding_MKL-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2
-    *	Works same as the convoWithoutPadding function, the only difference here being the matrix multiplication implemented here using Intel MKL.
-  *	multWithPadding_MKL-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2-padding
-    *	Works same as the convoWithPadding function, the only difference here being the matrix multiplication implemented here using Intel MKL.
-  *	multWithoutPadding_OB-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2
-    *	Works same as the convoWithoutPadding function, the only difference here being the matrix multiplication implemented here using OpenBLAS.
-  *	multWithPadding_OB-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2-padding
-    *	Works same as the convoWithPadding function, the only difference here being the matrix multiplication implemented here using OpenBLAS.
-  *	multWithoutPadding_pthread-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2
-    *	Works same as the convoWithoutPadding function, the only difference here being the matrix multiplication implemented here using pthreads.
-  *	multWithPadding_pthread-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2-padding
-    *	Works same as the convoWithPadding function, the only difference here being the matrix multiplication implemented here using pthreads.
-  *	maxPool-matrix1.txt-rows_matrix1
-    *	Here, rows_matrix1 should be a valid integer, else error (For eg. The total no. of floats in matrix1.txt is NOT equal to rows_matrix1 * rows_matrix1, showing that the dimensions of the matrix are wrong)
-    *	It implements the max pooling function for the given input matrix.
-  *	avgPool-matrix1.txt-rows_matrix1
-    *	Here, rows_matrix1 should be a valid integer, else error (For eg. The total no. of floats in matrix1.txt is NOT equal to rows_matrix1 * rows_matrix1, showing that the dimensions of the matrix are wrong)
-    *	It implements the average pooling function for the given input matrix.
-  *	sigmoid-vector1.txt-dim_vec
-    *	dim_vec should be a valid integer.
-    *	Implementing sigmoid function for the given vector.
-  *	softmax-vector1.txt-dim_vec
-    *	dim_vec should be a valid integer.
-    *	Implementing softmax function for the given vector.
-  *	relu-matrix1.txt-dim_matrix1
-    *	dim_matrix1 should be a valid integer.
-    *	Implementing Relu function for the given matrix.
-  *	tanh-matrix1.txt-dim_matrix1
-    *	dim_matrix1 should be a valid integer.
-    *	Implementing Tanh function for the given matrix.
-  *	All the other input formats are invalid and will show an error.
+2. Serial Convulution functions implemented as Matrix multiplication
+   a) multWithoutPadding-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2
+       *	Works same as the convoWithoutPadding function, the only difference here being the matrix multiplication implemented here.
+
+   b) multWithPadding-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2-padding
+       *	Works same as the convoWithPadding function, the only difference here being the matrix multiplication implemented here.
+ 
+3. Parallel Convolution functions making use of Intel MKL 
+   a) multWithoutPadding_MKL-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2
+       *	Works same as the convoWithoutPadding function, the only difference here being the matrix multiplication implemented here using Intel MKL.
+
+   b) multWithPadding_MKL-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2-padding
+       *	Works same as the convoWithPadding function, the only difference here being the matrix multiplication implemented here using Intel MKL.
+
+4. Parallel Convolution functions making use of OpenBLAS
+   a) multWithoutPadding_OB-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2
+       *	Works same as the convoWithoutPadding function, the only difference here being the matrix multiplication implemented here using OpenBLAS.
+
+   b) multWithPadding_OB-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2-padding
+       *	Works same as the convoWithPadding function, the only difference here being the matrix multiplication implemented here using OpenBLAS.
+
+5. Parallel Convolution functions making use of Pthreads
+   a) multWithoutPadding_pthread-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2
+       *	Works same as the convoWithoutPadding function, the only difference here being the matrix multiplication implemented here using pthreads.
+
+   b) multWithPadding_pthread-matrix1.txt-dim_matrix1-matrix2.txt-dim_matrix2-padding
+       *	Works same as the convoWithPadding function, the only difference here being the matrix multiplication implemented here using pthreads.
+
+6. Basic Matrix functions needed to create the CNN
+   a) maxPool-matrix1.txt-rows_matrix1
+       *	Here, rows_matrix1 should be a valid integer, else error (For eg. The total no. of floats in matrix1.txt is NOT equal to rows_matrix1 * rows_matrix1, showing that the dimensions of the matrix are wrong)
+       *	It implements the max pooling function for the given input matrix.
+
+   b) avgPool-matrix1.txt-rows_matrix1
+       *	Here, rows_matrix1 should be a valid integer, else error (For eg. The total no. of floats in matrix1.txt is NOT equal to rows_matrix1 * rows_matrix1, showing that the dimensions of the matrix are wrong)
+       *	It implements the average pooling function for the given input matrix.
+
+   c) sigmoid-vector1.txt-dim_vec
+       *	dim_vec should be a valid integer.
+       *	Implementing sigmoid function for the given vector.
+
+   d) softmax-vector1.txt-dim_vec
+       *	dim_vec should be a valid integer.
+       *	Implementing softmax function for the given vector.
+
+   e) relu-matrix1.txt-dim_matrix1
+       *	dim_matrix1 should be a valid integer.
+       *	Implementing Relu function for the given matrix.
+
+   f) tanh-matrix1.txt-dim_matrix1
+       *	dim_matrix1 should be a valid integer.
+       *	Implementing Tanh function for the given matrix.
 ```
 Then the comparisons were carried out between these implemented boosts by making box plots using **gnuplot**. The comparisions for the sizes of 32 * 32, 64 * 64, and 128 * 128 are given here by the file names as **matrix-32,3.png**, **matrix-64,3.png**, and **matrix-128,3.png** respectively.
    
